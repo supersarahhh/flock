@@ -7,9 +7,7 @@ export default function SearchPage(props) {
   const [searchResults, setSearchResults] = useState([]);
 
   async function searchData() {
-    const url = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${encodeURIComponent(
-      query
-    )}&apikey=${import.meta.env.VITE_TICKET_KEY}`;
+    const url = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${encodeURIComponent(query)}&apikey=${import.meta.env.VITE_TICKET_KEY}`;
 
     try {
       const response = await axios.get(url);
@@ -19,8 +17,8 @@ export default function SearchPage(props) {
     }
   }
 
-  function handleQuerySubmit(event) {
-    event.preventDefault();
+  function handleQuerySubmit(events) {
+    events.preventDefault();
     searchData();
   }
 
@@ -29,16 +27,23 @@ export default function SearchPage(props) {
       <form onSubmit={handleQuerySubmit}>
         <input
           name="search"
-          placeholder="Search for events..."
+          placeholder="Events in your area?..."
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(events) => setQuery(events.target.value)}
         />
         <button type="submit">Search</button>
       </form>
 
-      <h2>Search Results:</h2>
-      {searchResults.map((event) => (
-        <Event key={event.id} event={event} updateDetails={props.setDetailsData} />
+      {searchResults.map((events, index) => (
+
+        <Event 
+        key={events.id} 
+        events={events} 
+        detailsData={props.detailsData}
+        updateDetails={props.setDetailsData}
+        index={index}
+         />
+        
       ))}
     </div>
   );

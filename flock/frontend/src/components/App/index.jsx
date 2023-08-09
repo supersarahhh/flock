@@ -2,28 +2,28 @@ import { useState,useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom"
 import HomePage from '../HomePage'
 import SearchPage from '../SearchPage'
+import DetailsPage from '../DetailsPage';
 
 import './styles.css'
 
 function App() {
-  const [event, setEvent] = useState([])
+  const [events, setEvents] = useState([])
   const [detailsData, setDetailsData] = useState({})
+
 
     async function getData(url) {
       const res = await fetch(url)
-      const attractionsData = await res.json();
-      const event = attractionsData._embedded.attractions;
-      setEvent(event)
-      // console.log(attractions)
+      const data = await res.json()
+      const events = data._embedded.events
 
+      setEvents(events)
     }
 
    useEffect(() => {
-    getData(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${import.meta.env.VITE_TICKET_KEY}`)
+    getData(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_TICKET_KEY}`)
+
 
   }, [])
-
-  
 
   return  (
     <>
@@ -41,12 +41,17 @@ function App() {
       <Route path="/" element={
 
           <HomePage
-              event={event}
+              events={events}
               getData={getData}
               setDetailsData={setDetailsData} />} />
 
       <Route path="/search" element={<SearchPage setDetailsData={setDetailsData} />} />
+
+      <Route path="/details/:id" element={<DetailsPage detailsData={events}/>} />
+
+
   </Routes>
+
 </>
   ) 
 }

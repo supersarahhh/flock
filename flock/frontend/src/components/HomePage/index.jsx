@@ -2,7 +2,7 @@ import Event from '../Event'
 
 export default function HomePage(props) {
 
-    if (props.event.length === 0) {
+    if (props.events.length === 0) {
         return <div>Loading...</div>;
         
       }else {
@@ -14,12 +14,13 @@ export default function HomePage(props) {
         <h1>"Birds of a Feather Flock Together"</h1>
             {
                 
-                props.event.map((element, i) => (
+                props.events.map((element, i) => (
            
                     <Event 
                     key={i}
-                    event={element}
+                    events={element}
                     updateDetails={props.setDetailsData}
+                    index={i}
 
                     />
 
