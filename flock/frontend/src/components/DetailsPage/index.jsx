@@ -10,7 +10,6 @@ if (!eventDetails) {
 
     return <div>No details for your event...</div>;
 }
-    // console.log(detailsData)
 
         return (
             

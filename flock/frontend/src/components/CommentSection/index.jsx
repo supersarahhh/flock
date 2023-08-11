@@ -11,8 +11,6 @@ export default function commentSection({ eventId }) {
         comment: ''
     })
 
-    console.log(eventId)
-
 
     useEffect(() => {
         getComments(eventId)
