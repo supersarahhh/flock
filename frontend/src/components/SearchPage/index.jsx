@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import SearchDetail from '../SearchDetail';
+import { Spotify } from 'react-spotify-embed';
+
 
 export default function SearchPage() {
   const [query, setQuery] = useState('');
@@ -32,7 +34,11 @@ export default function SearchPage() {
   }
 
   return (
+
+    
     <div>
+
+
       <form onSubmit={handleQuerySubmit}>
 
         <input
@@ -45,6 +51,10 @@ export default function SearchPage() {
 &nbsp;&nbsp; <button type="submit">Search</button>
 
       </form>
+
+      <h2> want some inspo? </h2>
+
+<Spotify className="spotify" width="100%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
 
       {selectedEvent ? (
 
@@ -59,11 +69,11 @@ export default function SearchPage() {
       ) : (
         searchResults.map((event) => (
 
-          <div key={event.id}>
+          <div className='searchResults' key={event.id}>
                   <br></br>
 
              {event.images && event.images.length > 0 && (
-              <img src={event.images[0].url} alt={`Event`} />
+              <img className="searchimg" src={event.images[6].url} alt={`Event`} />
             )}
 
             <br />

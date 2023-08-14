@@ -5,7 +5,7 @@ export default function Event({ events, updateDetails, index }) {
 
   return (
 
-    <div>     
+    <div className='event'>     
           <h3>{events.name}</h3>
  
             <Link to={`/details/${index}`}
