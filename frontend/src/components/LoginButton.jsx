@@ -34,7 +34,7 @@ const LoginButton = () => {
   const handleLogin = () => {
     const url = webAuth.client.buildAuthorizeUrl({
       responseType: "token",
-      redirectUri: "http://localhost:5173",
+      redirectUri: window.location.origin,
       scope: "openid profile email",
       state: Abc()
     });
