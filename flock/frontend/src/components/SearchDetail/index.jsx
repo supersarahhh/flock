@@ -10,6 +10,7 @@ export default function SearchDetail({ event }) {
   }
 
   return (
+
     <div>
       <br></br>
 {event.images && event.images.length > 0 && (
@@ -29,6 +30,7 @@ export default function SearchDetail({ event }) {
 
       <h3>Status</h3>
       <p>Status Code: {event.dates.status.code}</p>
+      
       <br></br>
       <p>URL: <a href={event.url} target="_blank" rel="noopener noreferrer">{event.url}</a></p>
 

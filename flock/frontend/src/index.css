@@ -18,6 +18,8 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  display: flex;
+  justify-content: center;
 }
 a:hover {
   color: #535bf2;
@@ -27,13 +29,21 @@ p {
   display: inline;
 }
 body {
-  margin: 0;
+  /* margin: 0; */
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  /* place-items: center; */
+  min-width: 100vw;
   min-height: 100vh;
-  color: white
+  color: white;
+  background-image: url("https://png.pngtree.com/background/20230403/original/pngtree-city-%E2%80%8B%E2%80%8Bneon-light-background-picture-image_2264817.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  object-fit: contain;
+
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -41,10 +51,18 @@ h1 {
 }
 
 img {
-  height: 300px;
-  width: 300px;
+  display: flex;
+  height: auto;  
+  width: 100%;
+  align-self: center;
+  justify-content: center;
+  object-fit: contain;
+
 }
 
+div .homepage {
+  margin: 10px 400px;
+}
 .search-page {
   display: flex;
   flex-direction: column;
@@ -70,7 +88,12 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
   
+div .auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+}
 
 button {
   border-radius: 8px;
@@ -91,7 +114,28 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+.auth {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.auth button:hover {
+  background-color: #555;
+}
+
+
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -102,4 +146,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

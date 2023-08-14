@@ -1,29 +1,29 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom'
 
 export default function Event({ events, updateDetails, index }) {
 
   return (
 
-    <div>
-      
-          <h2>{events.name}</h2>
-          <h4>url:</h4>
+    <div>     
+          <h3>{events.name}</h3>
+ 
+            <Link to={`/details/${index}`}
+                onClick={() => { updateDetails(events) }} >
 
-<Link to={`/details/${index}`}
-      onClick={() => { updateDetails(events) }} >
-  
-  <p href={events.url}>{events.url}</p>
-  
-  </Link>
+            {events.images && events.images.length > 0 && (
+              <img src={events.images[6].url} alt={`Image 1`} />
+              )} 
+                            </Link>
 
-            <br></br>
-          {events.images && events.images.length > 0 && (
-            <img src={events.images[0].url} alt={`Image 1`} />
-              )}
+              
+              <br></br>
+              <p>Date: {events.dates.start.localDate}</p>
+              <br></br>
+              
+              <p>Status: {events.dates.status.code}</p>
 
-  </div>
+      </div>
 
   );
 }

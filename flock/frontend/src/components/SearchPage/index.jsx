@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import SearchDetail from '../SearchDetail';
 
-export default function SearchPage(props) {
+export default function SearchPage() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -42,37 +42,46 @@ export default function SearchPage(props) {
           onChange={(event) => setQuery(event.target.value)}
         />
 
-        <button type="submit">Search</button>
+&nbsp;&nbsp; <button type="submit">Search</button>
 
       </form>
 
       {selectedEvent ? (
 
         <div>
+         <br></br>
+
           <button onClick={handleHideDetails}>Hide Details</button>
+          
           <SearchDetail event={selectedEvent} />
         </div>
 
       ) : (
-
         searchResults.map((event) => (
 
           <div key={event.id}>
+                  <br></br>
+
              {event.images && event.images.length > 0 && (
               <img src={event.images[0].url} alt={`Event`} />
             )}
 
             <br />
+            <br></br>
+
             <p>Name: {event.name}</p>
             <br></br>
             <p>Type: {event.type}</p>
             <br></br>
-
-            {event.status && event.status.code === 'offsale' && <p>Status: Off Sale</p>}
+      <p>Status: {event.dates.status.code}</p>
+      <br></br>
 
             <div>
+            <br></br>
+
               <button onClick={() => handleEventClick(event)}>Show Details</button>
             </div>
+            <br></br>
 
           </div>
         ))

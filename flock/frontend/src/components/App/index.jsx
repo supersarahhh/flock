@@ -7,7 +7,6 @@ import DetailsPage from '../DetailsPage'
 import LoginButton from '../LoginButton'
 import LogoutButton from '../LogOutButton'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Navigate } from 'react-router-dom';
 
 import './styles.css'
 
@@ -15,7 +14,7 @@ function App() {
   const [events, setEvents] = useState([])
   const [detailsData, setDetailsData] = useState({})
   const {isLoading, error, isAuthenticated } = useAuth0();
-  
+
     async function getData(url) {
       const res = await fetch(url)
       const data = await res.json()
@@ -25,37 +24,36 @@ function App() {
     }
 
    useEffect(() => {
-    getData(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_TICKET_KEY}`)
+    getData(`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=${import.meta.env.VITE_TICKET_KEY}`)
 
   }, [])
 
+
   return  (
-   <div>
+    <div>
 
-    {error && <p>Auth error</p>}
+      <nav>
+        <Link to="/"> 
+            <h3>Home</h3>      
+          </Link>                   
+        <Link to="/search">
+            <h3>Search</h3>
+          </Link>                       
+        </nav>
 
-    {!error && isLoading && <p>Loading...</p>}
+          {error && <p>Auth error</p>}
+          {!error && isLoading && <p>Loading...</p>}
+          {!error && !isLoading && (
 
-    {!error && !isLoading && (
+                  <>
+                <div className="auth">
+                <LoginButton />&nbsp;&nbsp;&nbsp;&nbsp;
+                <LogoutButton />
+                </div>
+                  </>
+                        )} 
 
-      <>
-    <LoginButton />
-    <LogoutButton />
-    {isAuthenticated && <Navigate to="/profile" />}
-      </>
-
-      )} 
-
-         <nav >
-            <Link to="/">
-                <h3>Home</h3>      
-            </Link>      
-              
-            <Link to="/search">
-                <h3>Search</h3>
-            </Link>        
-            
-       </nav>
+       <h2>"Birds of a Feather Flock Together"</h2>
 
   <Routes>
       <Route path="/" element={
@@ -65,10 +63,8 @@ function App() {
               getData={getData}
               setDetailsData={setDetailsData} />} />
 
-      <Route path="/search" element={<SearchPage setDetailsData={setDetailsData} />} />
-
-      <Route path="/details/:id" element={<DetailsPage detailsData={events}/>} />
-
+              <Route path="/search" element={<SearchPage setDetailsData={setDetailsData} />} />
+              <Route path="/details/:id" element={<DetailsPage detailsData={events}/>} />
   </Routes>
 
 </div>

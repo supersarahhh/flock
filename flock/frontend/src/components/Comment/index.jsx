@@ -9,7 +9,6 @@ export default function Comment({ data, refreshComments }) {
         
     })
 
-
     function handleInputChange(event) {
         setEditFormData({
             ...editFormData,
@@ -29,15 +28,17 @@ export default function Comment({ data, refreshComments }) {
             .then(() => refreshComments())
     }
 
-
     let commentElement = 
     
     <div>
     
         <br></br>
 
-            <section>
+            <section>Username: &nbsp;&nbsp;
             <p>{data.name}</p>
+            <br></br>
+            <br></br>
+
             <p>{data.comment}</p>
             </section>
 

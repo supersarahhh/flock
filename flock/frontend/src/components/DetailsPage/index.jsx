@@ -14,6 +14,10 @@ if (!eventDetails) {
         return (
             
             <div>
+                      <br></br>
+{eventDetails.images && eventDetails.images.length > 0 && (
+              <img src={eventDetails.images[0].url} alt={`Event`} />
+            )}
                 
             <h2>{eventDetails.name}</h2>
             <br></br>
