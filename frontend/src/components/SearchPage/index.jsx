@@ -54,7 +54,7 @@ export default function SearchPage() {
 
       <h2> want some inspo? </h2>
 
-<Spotify className="spotify" width="100%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
+<Spotify className="spotify" width="60%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
 
       {selectedEvent ? (
 
