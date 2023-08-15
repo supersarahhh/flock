@@ -30,21 +30,21 @@ export default function Comment({ data, refreshComments }) {
 
     let commentElement = 
     
-    <div>
+    <div className="userCmt">
     
         <br></br>
-
-            <section>Username: &nbsp;&nbsp;
-            <p>{data.name}</p>
-            <br></br>
-            <br></br>
-
-            <p>{data.comment}</p>
+            <section>
+                <p>User</p> &nbsp;<strong><p style={{ color: 'pink' }}>{data.name}</p></strong>&nbsp; <p>says:</p>
+            
+                    <br></br>
+                    <br></br>
+                    <p>{data.comment}</p>
             </section>
 
          <br></br>
         
-            <div>
+         <div className="CRUD">
+
                 <button onClick={() => { setShowEditForm(true) }}>Edit</button>
 
                 <button onClick={handleDelete}> Delete </button>
@@ -61,18 +61,18 @@ export default function Comment({ data, refreshComments }) {
                 placeholder="name"
                 value={editFormData.name}
                 onChange={handleInputChange}/>
-            <br />
+                <br />
 
                     <textarea
                         name="comment"
                         placeholder="Have you been to this event? How was it?"
                         value={editFormData.comment}
                         onChange={handleInputChange}/>
-
-                                <div>
-                                    <button onClick={() => { setShowEditForm(false) }}>Close</button>
+                        <br></br>
+                                <div className="CRUD">
+                                    <button onClick={() => { setShowEditForm(false) }}>Close</button>&nbsp;
                                             
-                                    <button type="submit">Post</button>
+                                    &nbsp;<button type="submit">Post</button>
                                 </div>
     
     </form>

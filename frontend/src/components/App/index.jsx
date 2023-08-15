@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 import HomePage from '../HomePage'
 import SearchPage from '../SearchPage'
 import DetailsPage from '../DetailsPage'
@@ -30,44 +31,44 @@ function App() {
 
 
   return  (
-    <div>
-
-      <nav>
-        <Link to="/"> 
-            <h3>Home</h3>      
-          </Link>                   
-        <Link to="/search">
-            <h3>Search</h3>
-          </Link>                       
-        </nav>
+<div>
+              <br></br>
+              <br></br>
+              <img className="logo" src="/src/assets/img/logo-no-background.png"/>
+              <br></br>
+              <br></br>
+    <nav>
+       <button className="auth"> <Link className="auth" to="/"> 
+            Home     
+          </Link></button>                   
+          <button className="auth"> <Link className="auth" to="/search">
+            Search
+          </Link>   </button>                           
 
           {error && <p>Auth error</p>}
           {!error && isLoading && <p>Loading...</p>}
           {!error && !isLoading && (
 
                   <>
-                <div className="auth">
-                <LoginButton />&nbsp;&nbsp;&nbsp;&nbsp;
+                <LoginButton />
                 <LogoutButton />
-                </div>
                   </>
                         )} 
+        </nav>
 
-       <h2>"Birds of a Feather Flock Together"</h2>
-
-  <Routes>
+    <Routes>
       <Route path="/" element={
-
           <HomePage
               events={events}
               getData={getData}
               setDetailsData={setDetailsData} />} />
 
-              <Route path="/search" element={<SearchPage setDetailsData={setDetailsData} />} />
+              <Route path="/search" element={<SearchPage setDetailsData={setDetailsData} />} />             
               <Route path="/details/:id" element={<DetailsPage detailsData={events}/>} />
-  </Routes>
+          </Routes>
 
-</div>
+  
+  </div>
   ) 
 }
 

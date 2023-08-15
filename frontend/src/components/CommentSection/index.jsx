@@ -65,32 +65,36 @@ export default function commentSection({ eventId }) {
     }
 
     return (
-        <div>
+        <div className="cmtSection">
             <h2>Been here?  Leave a Comment!</h2>
 
             <button onClick={toggleCreateForm} >
                 {btnText}
             </button>
-            
+            <br></br>
+
             {showCreateForm && 
 
                 <form onSubmit={handleSubmit}>
 
                     <input
                         name="name"
-                        placeholder="name"
+                        placeholder="Username"
                         value={createFormData.name}
                         onChange={handleInputChange}/>
-
-                    <br/>
+                        <br></br>
 
                     <textarea
                         name="comment"
                         placeholder="Tell us about your experience..."
                         value={createFormData.comment}
                         onChange={handleInputChange} />
+                        <br></br>
+                        
+                    <button type="submit"> Post </button>    
+                    <br></br>
+                    <br></br>
 
-                    <button type="submit"> Post </button>
                 </form>
             }
             

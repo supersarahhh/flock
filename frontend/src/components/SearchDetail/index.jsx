@@ -11,28 +11,29 @@ export default function SearchDetail({ event }) {
 
   return (
 
-    <div>
-      <br></br>
-{event.images && event.images.length > 0 && (
-              <img src={event.images[0].url} alt={`Event`} />
-            )}
-      <h2>{event.name}</h2>
-
-      <h3>Date and Time</h3>
-      <p>Date: {event.dates.start.localDate}</p>
-      <br></br>
-
-      <p>Time: {event.dates.start.localTime}</p>
-      <br></br>
-
-      <p>Timezone: {event.dates.timezone}</p>
-      <br></br>
-
-      <h3>Status</h3>
-      <p>Status Code: {event.dates.status.code}</p>
+    <div className='searchDetails'>
       
       <br></br>
-      <p>URL: <a href={event.url} target="_blank" rel="noopener noreferrer">{event.url}</a></p>
+      {event.images && event.images.length > 0 && (
+              <img src={event.images[6].url} alt={`Event`} />
+                )}
+      <h2>{event.name}</h2>
+
+      <h3>Date </h3>
+      <p>{event.dates.start.localDate}</p>
+
+
+      <h3>Time</h3>
+      <p>{event.dates.start.localTime}</p>
+      <p>{event.dates.timezone}</p>
+
+      <h3>Status</h3>
+      <p>{event.dates.status.code}</p>
+
+      <h3>URL:</h3> 
+      <a href={event.url} target="_blank" rel="noopener noreferrer">{event.url}</a>
+      <br></br>
+      <br></br>
 
       <CommentSection eventId=
                 {event.name} />

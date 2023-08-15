@@ -38,27 +38,30 @@ export default function SearchPage() {
     
     <div>
 
+<br></br>
+<br></br>
 
+<h3>Find your Flock</h3>
       <form onSubmit={handleQuerySubmit}>
 
-        <input
+        <input className='search'
           name="search"
-          placeholder="Events in your area?..."
+          placeholder="__events in your area?"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
+
         />
 
 &nbsp;&nbsp; <button type="submit">Search</button>
 
       </form>
+      <br></br>
 
-      <h2> want some inspo? </h2>
 
-<Spotify className="spotify" width="60%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
 
       {selectedEvent ? (
 
-        <div>
+        <div className='hideDetails'>
          <br></br>
 
           <button onClick={handleHideDetails}>Hide Details</button>
@@ -70,33 +73,28 @@ export default function SearchPage() {
         searchResults.map((event) => (
 
           <div className='searchResults' key={event.id}>
-                  <br></br>
 
              {event.images && event.images.length > 0 && (
               <img className="searchimg" src={event.images[6].url} alt={`Event`} />
             )}
 
-            <br />
-            <br></br>
-
-            <p>Name: {event.name}</p>
-            <br></br>
-            <p>Type: {event.type}</p>
-            <br></br>
-      <p>Status: {event.dates.status.code}</p>
-      <br></br>
-
-            <div>
+            <div className='searchRD'>
+            <p>{event.name}</p>
+            <p>{event.dates.start.localDate}</p>
+            <p>Status: {event.dates.status.code}</p>
             <br></br>
 
               <button onClick={() => handleEventClick(event)}>Show Details</button>
             </div>
-            <br></br>
 
           </div>
         ))
 
       )}
+
+<h2> Need inspo . . .? </h2>
+
+<Spotify className="spotify" width="80%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
     </div>
     
   );
