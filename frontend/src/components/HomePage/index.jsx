@@ -33,7 +33,8 @@ export default function HomePage(props) {
               <br></br>
               <br></br>
               
-              <h3> Featured Events in LA 🌴 </h3>
+              <h2> Featured Events in LA 🌴 </h2>
+
               <Slider className="slider" {...carouselSettings}>
 
               {filteredEvents.map((element, i) => (
@@ -56,7 +57,7 @@ export default function HomePage(props) {
                 <div className="slider" >
                 <br></br>
 
-                <h3 className="hmeSpotify"> This Month's Featured Track Inspired by Our LA Events</h3>
+                <h4 className="hmeSpotify"> This Month's Featured Track Inspired by Our LA Events</h4>
                 <br></br>
 
               <Spotify height="152px" width="80%" link="https://open.spotify.com/album/1KNyxPSXQoZJ2KMQySCUUo?si=S32SaZglQh-RwW39jgn3iA" />

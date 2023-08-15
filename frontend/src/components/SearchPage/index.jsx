@@ -41,7 +41,7 @@ export default function SearchPage() {
 <br></br>
 <br></br>
 
-<h3>Find your Flock</h3>
+<h2>Find your Flock</h2>
       <form onSubmit={handleQuerySubmit}>
 
         <input className='search'

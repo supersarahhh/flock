@@ -49,7 +49,7 @@ export default function Comment({ data, refreshComments }) {
 
                 <button onClick={handleDelete}> Delete </button>
             </div>
-    
+            <br></br>
     </div>
 
     if (showEditForm) {

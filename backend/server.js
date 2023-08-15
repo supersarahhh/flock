@@ -7,14 +7,14 @@ const db = require('./models');
 
 const app = express();
 
-const commentsCtrl = require('./controllers/comment')
+const commentsCtr = require('./controllers/comment')
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
-app.use('/api/comments', commentsCtrl)
+app.use('/api/comments', commentsCtr)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
