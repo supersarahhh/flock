@@ -201,6 +201,7 @@ div .logo {
   flex-direction: column;
   justify-content: center;
   padding: 20px 50px;
+  height: fit-content;
 
 }
 

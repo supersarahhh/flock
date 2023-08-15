@@ -80,11 +80,24 @@ export default function SearchPage() {
 
             <div className='searchRD'>
             <p>{event.name}</p>
-            <p>{event.dates.start.localDate}</p>
-            <p>Status: {event.dates.status.code}</p>
+            
+            
+            {event._embedded && event._embedded.venues && event._embedded.venues.length > 0 && (
+              <p>
+                {event._embedded.venues[0].city?.name},{' '}
+                {event._embedded.venues[0].state?.name}
+                <br></br>
+                {/* <br></br> */}
+                {event._embedded.venues[0].country?.name}
+              </p>
+              )}
+            {event.dates.start.localDate}
+            <p>Status: <strong><span style={{ color: 'pink', textTransform: 'capitalize' }}>{event.dates.status.code}</span></strong></p>
+
             <br></br>
 
               <button onClick={() => handleEventClick(event)}>Show Details</button>
+
             </div>
 
           </div>

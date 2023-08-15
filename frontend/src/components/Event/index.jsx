@@ -24,7 +24,7 @@ export default function Event({ events, updateDetails }) {
               <p>Date: {events.dates.start.localDate}</p>
               <br></br>
               
-              <p>Status: {events.dates.status.code}</p>
+              {/* <p>Status: {events.dates.status.code}</p> */}
 
       </div>
 
