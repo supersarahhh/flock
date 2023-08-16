@@ -34,7 +34,7 @@ function App() {
 <div>
               <br></br>
               <br></br>
-              <img className="logo" src="/src/assets/img/logo-no-background.png"/>
+              <img className="logo" src="https://i.ibb.co/nLQ8HGH/flock-high-resolution-logo-color-on-transparent-background.png"/>
               <br></br>
               <br></br>
     <nav>
