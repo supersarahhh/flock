@@ -79,7 +79,7 @@ export default function SearchPage() {
             )}
 
             <div className='searchRD'>
-            <h3>{event.name}</h3>
+            <h2>{event.name}</h2>
             
             {event._embedded && event._embedded.venues && event._embedded.venues.length > 0 && (
               <p>
@@ -104,7 +104,7 @@ export default function SearchPage() {
 
       )}
 
-<h2> Need inspo . . .? </h2>
+<h3> Need inspo . . .? </h3>
 
 <Spotify className="spotify" width="80%" link="https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk" />
     </div>

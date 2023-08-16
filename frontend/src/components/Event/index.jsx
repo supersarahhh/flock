@@ -6,7 +6,7 @@ export default function Event({ events, updateDetails }) {
   return (
 
     <div className='event'>     
-          <h3>{events.name}</h3>
+          <strong><h4>{events.name}</h4></strong>
  
             <Link
               to={`/details/${events.id}`}

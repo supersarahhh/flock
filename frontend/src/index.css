@@ -54,6 +54,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   text-align: center;
+
 }
 
 h2 {
@@ -96,6 +97,11 @@ h3 {
   text-shadow: 2px 2px 3px #1a041f;
 }
 
+h5 {
+  font-family: 'Poiret One', cursive;
+
+}
+
 
 img {
   display: flex;
@@ -116,7 +122,7 @@ img {
 }
 
 .slider {
-  margin: 3% 10%;
+  margin: 3% 15%;
 
 }
 
