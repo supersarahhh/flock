@@ -75,7 +75,7 @@ export default function commentSection({ eventId }) {
 
             {showCreateForm && 
 
-                <form onSubmit={handleSubmit}>
+                <form className="cmtForm" onSubmit={handleSubmit}>
 
                     <input
                         name="name"

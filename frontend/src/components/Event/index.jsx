@@ -13,18 +13,17 @@ export default function Event({ events, updateDetails }) {
               onClick={() => updateDetails(events)}
               >
 
-
             {events.images && events.images.length > 0 && (
               <img src={events.images[6].url} alt={`Image 1`} />
               )} 
               
               </Link>
-            
               <br></br>
+
+              <br></br>
+
               <p>Date: {events.dates.start.localDate}</p>
               <br></br>
-              
-              {/* <p>Status: {events.dates.status.code}</p> */}
 
       </div>
 

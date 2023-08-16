@@ -39,9 +39,9 @@ export default function SearchPage() {
     <div>
 
 <br></br>
-<br></br>
 
-<h2>Find your Flock</h2>
+
+<h1>Find your Flock</h1>
       <form onSubmit={handleQuerySubmit}>
 
         <input className='search'
@@ -79,8 +79,7 @@ export default function SearchPage() {
             )}
 
             <div className='searchRD'>
-            <p>{event.name}</p>
-            
+            <h3>{event.name}</h3>
             
             {event._embedded && event._embedded.venues && event._embedded.venues.length > 0 && (
               <p>

@@ -53,7 +53,7 @@ export default function Comment({ data, refreshComments }) {
     </div>
 
     if (showEditForm) {
-        commentElement = <form
+        commentElement = <form className="cmtSection"
             onSubmit={handleSubmit}>
             
             <input

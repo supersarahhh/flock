@@ -30,10 +30,8 @@ export default function HomePage(props) {
           return (
                        
             <div className="homepage">
-              <br></br>
-              <br></br>
               
-              <h2> Featured Events in LA 🌴 </h2>
+              <h1> Featured Events in LA 🌴 </h1>
 
               <Slider className="slider" {...carouselSettings}>
 
@@ -52,17 +50,17 @@ export default function HomePage(props) {
 
               </Slider>
 
-              <p> -- click an image to view details -- </p>
-
-                <div className="slider" >
                 <br></br>
+              <div className="player" >
 
-                <h4 className="hmeSpotify"> This Month's Featured Track Inspired by Our LA Events</h4>
-                <br></br>
 
+              <br></br>
               <Spotify height="152px" width="80%" link="https://open.spotify.com/album/1KNyxPSXQoZJ2KMQySCUUo?si=S32SaZglQh-RwW39jgn3iA" />
+              <br></br>
+              <br></br>
+              <h4 className="hmeSpotify"> - This Month's Featured Track Inspired by Our LA Events -</h4>
 
-        </div>
+              </div>
     </div>
 
           );
