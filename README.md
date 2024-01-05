@@ -1,4 +1,5 @@
 Flock is a demo event discovery apps for users to find and connect with others in/ out of their community with similar interests.
+https://flock-app-5648d3eddff2.herokuapp.com/
 
 Here's a snippet of what it looks like! 
 <img width="1435" alt="Screenshot 2023-08-15 at 10 34 32 PM" src="https://github.com/supersarahhh/flock/assets/133293132/3814b8d4-13be-421e-b74c-b6cedcb02506">
